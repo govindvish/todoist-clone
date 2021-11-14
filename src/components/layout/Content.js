@@ -3,7 +3,7 @@ import { Sidebar } from './Sidebar';
 
 export const Content = () => {
   return (
-    <section>
+    <section className='content'>
       <Sidebar />
       <Tasks />
     </section>
