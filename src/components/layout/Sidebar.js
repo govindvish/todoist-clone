@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   FaChevronDown,
   FaInbox,
@@ -5,7 +6,12 @@ import {
   FaRegCalendarAlt,
 } from 'react-icons/fa';
 
+import { AddProject } from '../AddProject';
+import { Projects } from '../Projects';
+
 export const Sidebar = () => {
+  const [showProjects, setShowProjects] = useState(true);
+
   return (
     <div className='sidebar' data-testid='sidebar'>
       <ul className='sidebar__generic'>
@@ -34,8 +40,8 @@ export const Sidebar = () => {
         </span>
         <h2>Projects</h2>
       </div>
-      <ul className='sidebar__projects'>Projects will be here!</ul>
-      Add Project Component Here!!
+      <ul className='sidebar__projects'>{showProjects && <Projects />}</ul>
+      {showProjects && <AddProject />}
     </div>
   );
 };
