@@ -5,7 +5,7 @@ import { firebase } from '../firebase';
 
 export const IndividaulProject = ({ project }) => {
   const [showConfirm, setShowConfirm] = useState(false);
-  const { projects, setProjects } = useProjectsValue;
+  const { projects, setProjects } = useProjectsValue();
   const { setSelectedProject } = useSelectedProjectValue();
 
   const deleteProject = (docId) => {
@@ -22,7 +22,7 @@ export const IndividaulProject = ({ project }) => {
 
   return (
     <>
-      <span className='sidebar__dot'>.</span>
+      <span className='sidebar__dot'>•</span>
       <span className='sidebar__project-name'>{project.name}</span>
       <span
         className='sidebar__project-delete'
@@ -38,7 +38,7 @@ export const IndividaulProject = ({ project }) => {
                 type='button'
                 onClick={() => deleteProject(project.docId)}
               >
-                Delete{' '}
+                Delete
                 <span onClick={() => setShowConfirm(!showConfirm)}>Cancel</span>
               </button>
             </div>
