@@ -36,24 +36,24 @@ export const IndividaulProject = ({ project }) => {
         <FaTrashAlt />
         {showConfirm && (
           <div className='project-delete-modal'>
-            <div className='project-delete-modal__inner'>
+            <span className='project-delete-modal__inner'>
               <p>Are you sure you want to delete this project?</p>
               <button
                 type='button'
                 onClick={() => deleteProject(project.docId)}
               >
                 Delete
-                <span
-                  onClick={() => setShowConfirm(!showConfirm)}
-                  onKeyDown={() => setShowConfirm(!showConfirm)}
-                  role='button'
-                  tabIndex={0}
-                  aria-label='Cancel adding task, do not delete'
-                >
-                  Cancel
-                </span>
               </button>
-            </div>
+              <span
+                onClick={() => setShowConfirm(!showConfirm)}
+                onKeyDown={() => setShowConfirm(!showConfirm)}
+                role='button'
+                tabIndex={0}
+                aria-label='Cancel adding task, do not delete'
+              >
+                Cancel
+              </span>
+            </span>
           </div>
         )}
       </span>
