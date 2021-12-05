@@ -28,6 +28,10 @@ export const IndividaulProject = ({ project }) => {
         className='sidebar__project-delete'
         data-testid='delete-project'
         onClick={() => setShowConfirm(!showConfirm)}
+        onKeyDown={() => setShowConfirm(!showConfirm)}
+        role='button'
+        tabIndex={0}
+        aria-label='Confirm deletion of project'
       >
         <FaTrashAlt />
         {showConfirm && (
@@ -39,7 +43,15 @@ export const IndividaulProject = ({ project }) => {
                 onClick={() => deleteProject(project.docId)}
               >
                 Delete
-                <span onClick={() => setShowConfirm(!showConfirm)}>Cancel</span>
+                <span
+                  onClick={() => setShowConfirm(!showConfirm)}
+                  onKeyDown={() => setShowConfirm(!showConfirm)}
+                  role='button'
+                  tabIndex={0}
+                  aria-label='Cancel adding task, do not delete'
+                >
+                  Cancel
+                </span>
               </button>
             </div>
           </div>
